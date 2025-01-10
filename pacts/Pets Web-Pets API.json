@@ -1,0 +1,141 @@
+{
+  "consumer": {
+    "name": "Pets Web"
+  },
+  "interactions": [
+    {
+      "description": "create a pet",
+      "providerStates": [
+        {
+          "name": "pet interaction"
+        }
+      ],
+      "request": {
+        "body": {
+          "category": {
+            "id": 1001,
+            "name": "dog"
+          },
+          "id": 1001,
+          "name": "freddie",
+          "photoUrls": [
+            "string"
+          ],
+          "status": "available",
+          "tags": [
+            {
+              "id": 1001,
+              "name": "my freddie"
+            }
+          ]
+        },
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/v2/pet"
+      },
+      "response": {
+        "body": {
+          "category": {
+            "id": 1001,
+            "name": "dog"
+          },
+          "id": 1001,
+          "name": "freddie",
+          "photoUrls": [
+            "string"
+          ],
+          "status": "available",
+          "tags": [
+            {
+              "id": 1001,
+              "name": "my freddie"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "content-type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          },
+          "header": {},
+          "status": {}
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "get a pet",
+      "request": {
+        "method": "GET",
+        "path": "/v2/pet/1001"
+      },
+      "response": {
+        "body": {
+          "category": {
+            "id": 1001,
+            "name": "dog"
+          },
+          "id": 1001,
+          "name": "freddie",
+          "photoUrls": [
+            "string"
+          ],
+          "status": "available",
+          "tags": [
+            {
+              "id": 1001,
+              "name": "my freddie"
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "content-type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          },
+          "header": {},
+          "status": {}
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "13.1.4"
+    },
+    "pactRust": {
+      "ffi": "0.4.22",
+      "models": "1.2.3"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "Pets API"
+  }
+}

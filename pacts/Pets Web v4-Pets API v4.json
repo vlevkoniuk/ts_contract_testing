@@ -1,0 +1,165 @@
+{
+  "consumer": {
+    "name": "Pets Web v4"
+  },
+  "interactions": [
+    {
+      "description": "create a pet",
+      "pending": false,
+      "providerStates": [
+        {
+          "name": "pet interaction"
+        }
+      ],
+      "request": {
+        "body": {
+          "content": {
+            "category": {
+              "id": 1002,
+              "name": "dog"
+            },
+            "id": 1002,
+            "name": "freddie-clone",
+            "photoUrls": [
+              "string"
+            ],
+            "status": "available",
+            "tags": [
+              {
+                "id": 1002,
+                "name": "my freddie clone"
+              }
+            ]
+          },
+          "contentType": "application/json",
+          "encoded": false
+        },
+        "headers": {
+          "Accept": [
+            "application/json"
+          ],
+          "Content-Type": [
+            "application/json"
+          ]
+        },
+        "method": "POST",
+        "path": "/v2/pet"
+      },
+      "response": {
+        "body": {
+          "content": {
+            "category": {
+              "id": 1002,
+              "name": "dog"
+            },
+            "id": 1002,
+            "name": "freddie-clone",
+            "photoUrls": [
+              "string"
+            ],
+            "status": "available",
+            "tags": [
+              {
+                "id": 1002,
+                "name": "my freddie clone"
+              }
+            ]
+          },
+          "contentType": "application/json",
+          "encoded": false
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json"
+          ]
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          },
+          "header": {},
+          "status": {}
+        },
+        "status": 200
+      },
+      "type": "Synchronous/HTTP"
+    },
+    {
+      "description": "get a pet",
+      "pending": false,
+      "request": {
+        "headers": {
+          "Accept": [
+            "application/json"
+          ]
+        },
+        "method": "GET",
+        "path": "/v2/pet/1002"
+      },
+      "response": {
+        "body": {
+          "content": {
+            "category": {
+              "id": 1002,
+              "name": "dog"
+            },
+            "id": 1002,
+            "name": "freddie-clone",
+            "photoUrls": [
+              "string"
+            ],
+            "status": "available",
+            "tags": [
+              {
+                "id": 1002,
+                "name": "my freddie clone"
+              }
+            ]
+          },
+          "contentType": "application/json",
+          "encoded": false
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json"
+          ]
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          },
+          "header": {},
+          "status": {}
+        },
+        "status": 200
+      },
+      "type": "Synchronous/HTTP"
+    }
+  ],
+  "metadata": {
+    "pactRust": {
+      "ffi": "0.4.22",
+      "models": "1.2.3"
+    },
+    "pactSpecification": {
+      "version": "4.0"
+    }
+  },
+  "provider": {
+    "name": "Pets API v4"
+  }
+}
