@@ -3,7 +3,7 @@
     "spec": "test/**/*.spec.ts",
     "require": "tsx",
     "timeout": 10000,
-    "reporter": "json",
+    "reporter": ["json", "mocha-ctrf-json-reporter"],
     "reporterOptions": [
         "output=./reports/results.json"
     ]

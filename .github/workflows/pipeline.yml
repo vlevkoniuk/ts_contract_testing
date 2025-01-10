@@ -29,7 +29,7 @@ jobs:
     - run: npm ci
     - run: npm run mocha
     - name: Publish Test Summary Results
-      run: npx github-actions-ctrf reports/results.json
+      run: npx github-actions-ctrf ctrf/ctrf-report.json
     # - name: Publish Test Results
     #   uses: EnricoMi/publish-unit-test-result-action@v2
     #   if: always()
