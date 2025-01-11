@@ -26,15 +26,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run mocha
-    - name: Publish Test Summary Results
+    - name: install npm packages
+      run: npm ci
+    - name: run tests
+      run: npm run mocha
+    - name: Generate Test Summary
       run: npx github-actions-ctrf ctrf/ctrf-report.json
-    # - name: Publish Test Results
-    #   uses: EnricoMi/publish-unit-test-result-action@v2
-    #   if: always()
-    #   with:
-    #     files: |
-    #       test-results/**/*.xml
-    #       test-results/**/*.trx
-    #       reports/**/*.json
